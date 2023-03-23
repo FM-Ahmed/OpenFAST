@@ -1,4 +1,2 @@
-# OpenFAST
-Functions to either read or plot OpenFAST output files.
-Extension of output file should be .out.
-Output file should be unedited.
+# FAST.Farm
+Functions to either read or plot FAST.Farm files.
