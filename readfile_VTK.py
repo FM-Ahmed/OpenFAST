@@ -8,15 +8,17 @@ import pandas as pd
 import numpy as np
 import os
 
-def readfile_VTK(filepath, xgrid, ygrid, x0, y0, xres, yres):
+def readfile_VTK(data_vtk, xgrid, ygrid, x0, y0, xres, yres):
 #     Inputs:
-#     filepath: absolute path to .vtk file location
-#     xgrid: number of low resolution spatial nodes in x-direction [scalar]
-#     ygrid: number of low resolution spatial nodes in y-direction [scalar]
-#     x0: starting x in low resolution domain [scalar]
-#     y0: starting y in low resolution domain [scalar]
-#     xres: resolution of low resolution domain in x-direction [scalar]
-#     yres: resolution of low resolution domain in y-direction [scalar]
+#         data_vtk: dataframe consisting of velocity data from .vtk file
+
+#     Following input parameters (domain properties) can be found in the primary FAST.Farm input file (.fstf)
+#         xgrid: number of low resolution spatial nodes in x-direction [scalar]
+#         ygrid: number of low resolution spatial nodes in y-direction [scalar]
+#         x0: starting x in low resolution domain [scalar]
+#         y0: starting y in low resolution domain [scalar]
+#         xres: resolution of low resolution domain in x-direction [scalar]
+#         yres: resolution of low resolution domain in y-direction [scalar]
 
 #     The function uses x and y as variable names, but the function works for all planes: XY, XZ, YZ
 #     E.g YZ-plane: xgrid would be number of nodes in y-direction instead of x-direction
@@ -27,10 +29,6 @@ def readfile_VTK(filepath, xgrid, ygrid, x0, y0, xres, yres):
 #     x: scaled x-axis [(xgrid, ) array]
 #     y: scaled y-axis [(ygrid, ) array]
 #     u: wind velocities [(ygrid, xgrid) list]
-    
-    vtk_file = open(filepath)
-    data_vtk = pd.read_csv(vtk_file, header = 8, sep='\s+', lineterminator = '\n')
-    vtk_file.close()
     
     df_vtk = pd.DataFrame(data_vtk)
     x = np.arange(0, xgrid, 1)
@@ -48,4 +46,3 @@ def readfile_VTK(filepath, xgrid, ygrid, x0, y0, xres, yres):
     x = x*xres+x0
     y = y*yres+y0
     return x, y, u
-
