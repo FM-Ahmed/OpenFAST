@@ -7,3 +7,4 @@ Takes a dataframe consisting of wind velocity and domain properties as input to 
 
 ### Example1.py
 An example of how the function readfile_VTK.py can be used.
+In this example, the function is used to visualize a single .vtk file.
