@@ -3,7 +3,7 @@ Functions to either read or plot FAST.Farm files. Made for beginner FAST.Farm us
 
 ## Content of this repository
 ### readfile_VTK.py
-Takes a dataframe consisting of wind velocity and domain properties as input to output two scaled axes and wind velocities in a format where it can be visualized. The function uses x and y as variable names, but it works for any plane: XY, XZ, YZ.
+Takes a dataframe consisting of wind velocity and domain properties as input to output two scaled axes and wind velocities in a format where it can be visualized. The function uses x and y as variable names, but it works for any plane: XY, XZ, YZ. Just have to provide domain properties accordingly.
 
 ### Example1.py
 An example of how the function readfile_VTK.py can be used.
