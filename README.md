@@ -1,5 +1,5 @@
 # FAST.Farm
-Functions to either read or plot FAST.Farm files.
+Functions to either read or plot FAST.Farm files. Made for beginner FAST.Farm users, which I am myself.
 
 ## Content of this repository
 ### readfile_VTK.py
