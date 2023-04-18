@@ -9,13 +9,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
-path_to_file = r''
+# Inputs
+path_to_file = r'' # put absolute path to .out file from OpenFAST inside brackets
 
-user_inputs = ['TwrBsFxt',
+user_inputs = ['TwrBsFxt', # put variables you want to plot in list
                'TwrBsFyt',
                'TwrBsMxt',
                'TwrBsMyt']
 
+# From hereon, code does work, no more inputs needed under this line
 if len(user_inputs) <= 2:
     raise ValueError('Length of user_inputs must be longer than 2. Length is currently {}.'.format(len(user_inputs)))
 else:
@@ -56,8 +58,8 @@ for key, value in variable_unit_pairs.items():
 df = df_data[list_of_col].copy()
 
 #checking how many input variables and making appropriate amount of subplots
-evenNumbers = np.arange(2, 802, 2)
-oddNumbers = np.arange(1, 801, 2)
+evenNumbers = np.arange(2, 8002, 2)
+oddNumbers = np.arange(1, 8001, 2)
 
 if len(list_of_col) in evenNumbers:
     nrows = int(len(list_of_col)/2)
