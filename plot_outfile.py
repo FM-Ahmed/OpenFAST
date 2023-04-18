@@ -30,10 +30,10 @@ df_data = dfunit[1:].loc[:,:].astype(float)
 
 input_data.close()
 
-#time variable
+# time variable
 time = df_data['Time']
 
-#check if the requested variables are valid or not
+# check if the requested variables are valid or not
 def check_variables():
     for input_variable in user_inputs:
         if input_variable in dfunit.columns:
@@ -43,12 +43,12 @@ def check_variables():
     return print('All requested variables are ok.') 
 check_variables()
 
-#finding units for the variables
+# finding units for the variables
 variable_unit_pairs = {}
 for item in user_inputs:
     variable_unit_pairs[item] = dfunit[item][0]
 
-#sorting variables and units into lists and dataframe, used in plotting
+# sorting variables and units into lists and dataframe, used in plotting
 list_of_col = []
 list_of_unit = []
 for key, value in variable_unit_pairs.items():
@@ -57,7 +57,7 @@ for key, value in variable_unit_pairs.items():
 
 df = df_data[list_of_col].copy()
 
-#checking how many input variables and making appropriate amount of subplots
+# checking how many input variables and making appropriate amount of subplots
 evenNumbers = np.arange(2, 8002, 2)
 oddNumbers = np.arange(1, 8001, 2)
 
@@ -66,17 +66,17 @@ if len(list_of_col) in evenNumbers:
 if len(list_of_col) in oddNumbers:
     nrows = int(len(list_of_col)/2) + 1
 
-#making list of colors used in plotting
+# making list of colors used in plotting
 TABLEAU_COLORS_swapped = dict((v, k) for k, v in mcolors.TABLEAU_COLORS.items())
 colordict = dict(TABLEAU_COLORS_swapped, **mcolors.BASE_COLORS)
 
 list_of_colors = []
 for key, value in colordict.items():
     list_of_colors.append(key)
-list_of_colors.remove('w') #remove white color, cant see white plots
+list_of_colors.remove('w') # remove white color, cant see white plots
 list_of_colors *= nrows
 
-#plotting
+# plotting
 fig, ax = plt.subplots(nrows, 2, figsize = [20, nrows*3], sharex = True)
 
 i = 0
