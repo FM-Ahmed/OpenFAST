@@ -1,6 +1,6 @@
-Functions to either read or plot FAST.Farm/OpenFAST/TurbSim files. These are wind simulation tools developed by NREL. The scripts are made for beginner users, which I am myself. Code is made specifically for OpenFAST/FAST.Farm, but can probably be used elsewhere with slight tweaks. 
+Functions to either read or plot FAST.Farm/OpenFAST/TurbSim files. These are wind simulation tools developed by NREL. The scripts are made for beginner users, which I am myself. Code is made specifically for OpenFAST/FAST.Farm, but can probably be used elsewhere with slight tweaks.
 
-# FAST.Farm
+# FAST.Farm v3.4.1
 
 ### readfile_VTK.py
 Takes a dataframe consisting of wind velocity and domain properties as input to output two scaled axes and wind velocities in a format where it can be visualized. The function uses x and y as variable names, but it works for any plane: XY, XZ, YZ. Just have to provide domain properties accordingly.
@@ -13,7 +13,7 @@ In this example, the function is used to visualize a single .vtk file.
 An example of how the function readfile_VTK.py can be used.
 In this example, the .vtk files in a folder were averaged to create an average wake behind the turbine.
 
-# OpenFAST
+# OpenFAST v3.4.1
 
 ### plot_outfile.py
 
