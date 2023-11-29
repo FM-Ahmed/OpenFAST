@@ -1,4 +1,4 @@
-Functions to either read or plot FAST.Farm/OpenFAST/TurbSim files. These are wind simulation tools developed by NREL. The scripts are made for beginner users, which I am myself. Code is made specifically for OpenFAST/FAST.Farm, but can probably be used elsewhere with slight tweaks.
+Functions to either read or plot FAST.Farm/OpenFAST/TurbSim files. These are wind simulation tools developed by NREL. The scripts are made for beginner users, which I am myself. Code is made specifically for OpenFAST/FAST.Farm, but can probably be used elsewhere with slight tweaks. May or may not work for other versions of the software.
 
 # FAST.Farm v3.4.1
 
